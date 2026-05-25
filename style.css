@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* Apply Outfit font globally to the entire Streamlit app */
+html, body, [class*="css"], [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    font-family: 'Outfit', sans-serif !important;
+    background-color: #05070c !important;
+    color: #e2e8f0 !important;
+}
+
+/* Background ambient glow effect */
+[data-testid="stAppViewContainer"]::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -150px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+[data-testid="stAppViewContainer"]::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    bottom: -150px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+    background-color: #03050a !important; /* Flat, dark minimal background */
+    border-right: 1px solid rgba(255, 255, 255, 0.03) !important;
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] {
+    color: #94a3b8 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* Main Title Style with Multi-stop Gradient */
+h1 {
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #ec4899 100%);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+}
+
+h2, h3, h4 {
+    font-weight: 700 !important;
+    color: #f8fafc !important;
+    letter-spacing: -0.5px !important;
+}
+
+/* Glassmorphic Cards (Home Page & Feature Cards) */
+.main-card {
+    background: rgba(13, 18, 30, 0.7) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 35px !important;
+    border-radius: 24px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    margin-bottom: 25px !important;
+    height: auto !important;
+    min-height: 250px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.main-card:hover {
+    border-color: rgba(56, 189, 248, 0.4) !important;
+    box-shadow: 0 15px 45px rgba(56, 189, 248, 0.12) !important;
+    transform: translateY(-6px) !important;
+}
+
+.main-card:hover::before {
+    opacity: 1;
+}
+
+.feature-title {
+    color: #38bdf8 !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-desc {
+    color: #cbd5e1 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* Status Pill Tags */
+.status-tag {
+    display: inline-block;
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: #4ade80 !important;
+    padding: 6px 16px !important;
+    border-radius: 100px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(74, 222, 128, 0.2) !important;
+    margin-top: 15px;
+}
+
+/* Steps Progress Section */
+.step-card {
+    background: rgba(15, 23, 42, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 25px !important;
+    border-radius: 20px !important;
+    text-align: center !important;
+    height: 220px !important;
+    transition: all 0.3s ease !important;
+}
+
+.step-card:hover {
+    border-color: rgba(99, 102, 241, 0.3) !important;
+    transform: translateY(-4px) !important;
+    background: rgba(15, 23, 42, 0.7) !important;
+}
+
+.step-num {
+    background: linear-gradient(135deg, #38bdf8, #6366f1) !important;
+    color: #ffffff !important;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50% !important;
+    margin: 0 auto 15px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
+}
+
+/* Global Premium Button Style */
+div.stButton > button {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%) !important; /* Premium dark slate gradient */
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+    padding: 14px 28px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important; /* Minimal dark shadow */
+    width: 100% !important;
+}
+
+div.stButton > button:hover {
+    border-color: #6366f1 !important; /* Subtle purple hover border */
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.15) !important; /* Minimal purple glow */
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+}
+
+
+div.stButton > button:active {
+    transform: scale(0.98) !important;
+}
+
+/* Input Fields & Container Cards */
+.settings-card {
+    background: rgba(10, 15, 26, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.stt-settings-card {
+    background: rgba(10, 15, 26, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+}
+
+/* Metric Display Tags */
+.metric-words {
+    background: rgba(56, 189, 248, 0.08) !important;
+    color: #38bdf8 !important;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.metric-chars {
+    background: rgba(168, 85, 247, 0.08) !important;
+    color: #a855f7 !important;
+    border: 1px solid rgba(168, 85, 247, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Result Panels */
+.result-card {
+    background: rgba(13, 18, 30, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-left: 5px solid #2dd4bf !important;
+    padding: 25px !important;
+    border-radius: 16px !important;
+    color: #f1f5f9 !important;
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    margin-top: 25px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* PDF Preview Block */
+.pdf-container {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+    background: #080c14 !important;
+}
+
+/* Dashboard Stat Cards */
+.stat-card {
+    background: rgba(13, 18, 30, 0.7) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding: 25px !important;
+    border-radius: 20px !important;
+    text-align: center !important;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.stat-card:hover {
+    border-color: rgba(99, 102, 241, 0.4) !important;
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15) !important;
+    transform: translateY(-4px) !important;
+}
+
+.stat-val {
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.stat-label {
+    color: #64748b !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-top: 5px;
+}
+
+/* Audio Player custom styling to look neat */
+audio {
+    border-radius: 30px;
+    outline: none;
+    filter: invert(90%) hue-rotate(180deg);
+}
+
+/* Fine-tune Streamlit widgets look */
+.stTextArea textarea, .stTextInput input, .stSelectbox [data-baseweb="select"] {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    font-size: 15px !important;
+}
+
+.stTextArea textarea:focus, .stTextInput input:focus, .stSelectbox [data-baseweb="select"]:focus-within {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.25) !important;
+}
+
+.stSlider > div > div > div {
+    background: #6366f1 !important;
+}
+
+/* Footer layout */
+.footer-container {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #475569;
+}
+
+/* Float the Home buttons at the top right of the page */
+div[class*="st-key-home_"] {
+    position: fixed !important;
+    top: 25px !important;
+    right: 25px !important;
+    z-index: 999999 !important;
+    width: auto !important;
+}
+
+div[class*="st-key-home_"] button {
+    width: auto !important;
+    padding: 8px 18px !important;
+    font-size: 14px !important;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #e2e8f0 !important;
+}
+
+div[class*="st-key-home_"] button:hover {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3) !important;
+    color: #ffffff !important;
+}
+
+/* Sidebar Navigation Buttons */
+div[data-testid="stSidebar"] div[class*="st-key-nav_"] button {
+    background: #080c14 !important; /* Dark solid minimal background */
+    color: #475569 !important; /* Dark slate text */
+    border: 1px solid rgba(255, 255, 255, 0.02) !important;
+    border-left: 2px solid transparent !important;
+    border-radius: 6px !important;
+    padding: 2px 8px 2px 12px !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    box-shadow: none !important;
+    margin-bottom: 4px !important;
+    transition: all 0.15s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: unset !important;
+    height: 26px !important;
+}
+
+div[data-testid="stSidebar"] div[class*="st-key-nav_"] button:hover {
+    background: #0f172a !important; /* Slightly lighter dark background on hover */
+    color: #94a3b8 !important; /* Brighter slate text on hover */
+    border-color: rgba(255, 255, 255, 0.05) !important;
+    border-left-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+
+
+

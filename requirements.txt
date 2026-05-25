@@ -1,0 +1,13 @@
+streamlit
+pandas 
+numpy
+SpeechRecognition
+edge-tts
+googletrans==4.0.0-rc1
+PyPDF2
+pydub
+TTS
+ffmpeg-python
+soundfile
+
+conda run -n vcltts streamlit run app.py
